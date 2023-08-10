@@ -9,7 +9,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 70px;
   padding: 15px;
 }
 header .material-symbols-outlined {
@@ -57,18 +57,17 @@ header .searchbar .mic {
 }
 
 main {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 60px);
   display: flex;
   background-color: #ffffff;
-  position: fixed;
 }
 main .sidebar {
   color: black;
   height: 100%;
-  width: 220px;
+  width: 250px;
   background-color: rgb(255, 255, 255);
   overflow-y: scroll;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Roboto", sans-serif;
 }
 main .sidebar .material-symbols-outlined {
@@ -104,11 +103,11 @@ main .sidebar .nav .active {
   background: #e5e5e5;
 }
 main ::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
   background: none;
 }
 main ::-webkit-scrollbar-thumb {
-  display: none;
+  display: block;
 }
 main ::-webkit-scrollbar-thumb:hover {
   display: block;
@@ -120,29 +119,27 @@ main ::-webkit-scrollbar-thumb {
   background: rgb(173, 173, 173);
   border-radius: 5px;
 }
-main .sidebar:hover ::-webkit-scrollbar-thumb {
-  background: gray;
-}
 
 .videocontainer iframe {
   border-radius: 10px;
 }
 
 .content {
-  width: calc(100vw - 220px);
+  width: calc(100vw - 250px);
   overflow-y: scroll;
-  margin-left: 40px;
+  background-color: rgb(255, 255, 255);
 }
 .content .chip-wrapper {
   overflow-x: scroll;
   background-color: rgb(255, 255, 255);
   display: flex;
-  border-top: 1px solid white;
+  border-top: 1px solid rgb(255, 255, 255);
   border-bottom: 1px solid white;
   position: fixed;
+  margin-bottom: 10%;
 }
 .content .chip-wrapper .chip {
-  font-size: 14px;
+  font-size: 18px;
   margin: 12px 6px;
   background-color: rgba(0, 0, 0, 0.0509803922);
   padding: 6px 12px;
@@ -158,9 +155,9 @@ main .sidebar:hover ::-webkit-scrollbar-thumb {
 
 .videocontainer {
   font-size: 12px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 25px;
   overflow-y: scroll;
   margin-top: 6%;
 }
@@ -185,57 +182,58 @@ main .sidebar:hover ::-webkit-scrollbar-thumb {
 .videocontainer .vids .title h3 {
   color: rgb(0, 0, 0);
   line-height: 18px;
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 6px;
+}
+.videocontainer .vids .title a {
+  font-size: 15px;
 }
 .videocontainer .vids .title span {
   text-decoration: none;
   color: rgb(96, 96, 96);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @media (max-width: 1440px) {
   .content {
-    width: 100vw;
+    width: calc(100vw - 200px);
   }
-  .content .videocontainer {
+  .content .chip-wrapper {
+    overflow-x: scroll;
+    background-color: rgb(255, 255, 255);
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    position: fixed;
+  }
+  .content .chip-wrapper .chip {
+    font-size: 14px;
+    margin: 12px 6px;
+    background-color: rgba(0, 0, 0, 0.0509803922);
+    padding: 6px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.0509803922);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: black;
+  }
+  .content .chip-wrapper .chip:hover {
+    background-color: rgba(0, 0, 0, 0.3019607843);
+  }
+  .videocontainer {
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 190px;
+    padding: 25px;
     overflow-y: scroll;
-    margin-top: 7%;
-    flex-direction: row;
+    margin-top: 5%;
+    margin-right: 3%;
   }
-  .content .videocontainer .vids {
+  .videocontainer .details {
     display: flex;
   }
-}
-@media (max-width: 1024px) {
-  .searchbar {
-    display: none;
-  }
-  .searchbar form input {
-    width: 300px;
-  }
-  .content {
-    width: 100vw;
-  }
-  .content .videocontainer {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    overflow-y: scroll;
-    margin-top: 7%;
-    flex-direction: row;
-  }
-  .content .videocontainer .vids .videos iframe {
-    width: 400;
-    height: 200;
-  }
-  .content .videocontainer .vids .details {
-    display: flex;
-  }
-  .content .videocontainer .vids .details .author img {
+  .videocontainer .details .author img {
     -o-object-fit: cover;
        object-fit: cover;
     border-radius: 50%;
@@ -243,55 +241,853 @@ main .sidebar:hover ::-webkit-scrollbar-thumb {
     width: 40px;
     margin-right: 10px;
   }
-  .content .videocontainer .vids .title {
+  .videocontainer .title {
     display: flex;
     flex-direction: column;
   }
-  .content .videocontainer .vids .title h3 {
-    color: rgb(3, 3, 3);
+  .videocontainer .title h3 {
+    color: rgb(0, 0, 0);
     line-height: 18px;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 6px;
   }
-  .content .videocontainer .vids .title span {
+  .videocontainer .title span {
     text-decoration: none;
     color: rgb(96, 96, 96);
-    font-size: 12px;
+    font-size: 14px;
+  }
+  main {
+    height: calc(100vh - 60px);
+    display: flex;
+    background-color: #ffffff;
+  }
+  main .sidebar {
+    color: black;
+    height: 100%;
+    width: 250px;
+    background-color: rgb(255, 255, 255);
+    overflow-y: scroll;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+  }
+  main .sidebar .material-symbols-outlined {
+    color: black;
+  }
+  main .sidebar .nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    display: block;
+  }
+  main .sidebar .nav .navlink {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    color: black;
+  }
+  main .sidebar .nav .navlink span {
+    margin-left: 15px;
+  }
+  main .sidebar .nav .navlink img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  main .sidebar .nav .navlink:hover {
+    background: #e5e5e5;
+    cursor: pointer;
+  }
+  main .sidebar .nav .active {
+    background: #e5e5e5;
+  }
+  main ::-webkit-scrollbar {
+    width: 8px;
+    background: none;
+  }
+  main ::-webkit-scrollbar-thumb {
+    display: block;
+  }
+  main ::-webkit-scrollbar-thumb:hover {
+    display: block;
+  }
+  main ::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+  }
+  main ::-webkit-scrollbar-thumb {
+    background: rgb(173, 173, 173);
+    border-radius: 5px;
+  }
+  .videocontainer iframe {
+    border-radius: 10px;
   }
 }
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
-  .searchbar {
-    display: none;
-  }
-  .searchbar .mic {
-    display: none;
-  }
-  .searchbar form input {
-    display: none;
-  }
-  .searchbar form button {
-    display: none;
-  }
+@media (max-width: 1262px) {
   .content {
-    width: 100vw;
+    width: calc(100vw - 220px);
   }
-  .content .videocontainer {
+  .content .chip-wrapper {
+    overflow-x: scroll;
+    background-color: rgb(255, 255, 255);
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    position: fixed;
+  }
+  .content .chip-wrapper .chip {
+    font-size: 14px;
+    margin: 12px 6px;
+    background-color: rgba(0, 0, 0, 0.0509803922);
+    padding: 6px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.0509803922);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: black;
+  }
+  .content .chip-wrapper .chip:hover {
+    background-color: rgba(0, 0, 0, 0.3019607843);
+  }
+  .videocontainer {
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     overflow-y: scroll;
-    margin-top: 10%;
-    flex-direction: row;
+    margin-top: 8%;
+    margin-right: 3%;
   }
-  .content .videocontainer .vids {
+  .videocontainer .details {
+    display: flex;
+  }
+  .videocontainer .details .author img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+  .videocontainer .title {
     display: flex;
     flex-direction: column;
   }
-  .content .videocontainer .vids .videos {
+  .videocontainer .title h3 {
+    color: rgb(0, 0, 0);
+    line-height: 18px;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .videocontainer .title span {
+    text-decoration: none;
+    color: rgb(96, 96, 96);
+    font-size: 14px;
+  }
+}
+@media (max-width: 990px) {
+  .content {
+    width: calc(100vw - 200px);
+  }
+  .content .chip-wrapper {
+    overflow-x: scroll;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    position: fixed;
+  }
+  .content .chip-wrapper .chip {
+    font-size: 14px;
+    margin: 12px 6px;
+    background-color: rgba(0, 0, 0, 0.0509803922);
+    padding: 6px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.0509803922);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: black;
+  }
+  .content .chip-wrapper .chip:hover {
+    background-color: rgba(0, 0, 0, 0.3019607843);
+  }
+  .videocontainer {
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-y: scroll;
+    margin-top: 8%;
+    margin-right: 3%;
+  }
+  .videocontainer .details {
+    display: flex;
+  }
+  .videocontainer .details .author img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+  .videocontainer .title {
+    display: flex;
+    flex-direction: column;
+  }
+  .videocontainer .title h3 {
+    color: rgb(0, 0, 0);
+    line-height: 18px;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .videocontainer .title span {
+    text-decoration: none;
+    color: rgb(96, 96, 96);
+    font-size: 14px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 15px;
+  }
+  header .material-symbols-outlined {
+    color: rgb(100, 100, 100);
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .logo {
+    display: flex;
+    align-items: center;
+  }
+  header .logo #menu {
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .searchbar {
+    display: flex;
+  }
+  header .searchbar form {
+    display: flex;
+    border: 1px solid #ddd;
+    height: 45px;
+    border-radius: 50px 50px;
+    margin-left: 2%;
+  }
+  header .searchbar form input {
+    width: 400px;
     padding: 10px;
-    gap: 50px;
+    border: 0;
+    height: 100%;
+    border-radius: 50px 50px;
+  }
+  header .searchbar form input:focus {
+    outline: none;
+    border: 1px solid #ddd;
+  }
+  header .searchbar form button {
+    height: 100%;
+    width: 60px;
+    border: none;
+    border-radius: 0px 50px 50px 0px;
+  }
+  header .searchbar .mic {
+    margin-top: -5%;
+    border-radius: 50px;
+  }
+}
+@media (max-width: 984px) {
+  .content {
+    width: calc(100vw - 250px);
+  }
+  .content .chip-wrapper {
+    overflow-x: scroll;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    position: fixed;
+  }
+  .content .chip-wrapper .chip {
+    font-size: 14px;
+    margin: 12px 6px;
+    background-color: rgba(0, 0, 0, 0.0509803922);
+    padding: 6px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.0509803922);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: black;
+  }
+  .content .chip-wrapper .chip:hover {
+    background-color: rgba(0, 0, 0, 0.3019607843);
+  }
+  .videocontainer {
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-y: scroll;
+    margin-top: 8%;
+    margin-right: 3%;
+  }
+  .videocontainer .details {
+    display: flex;
+  }
+  .videocontainer .details .author img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+  .videocontainer .title {
+    display: flex;
+    flex-direction: column;
+  }
+  .videocontainer .title h3 {
+    color: rgb(0, 0, 0);
+    line-height: 18px;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .videocontainer .title span {
+    text-decoration: none;
+    color: rgb(96, 96, 96);
+    font-size: 14px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 15px;
+  }
+  header .material-symbols-outlined {
+    color: rgb(100, 100, 100);
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .logo {
+    display: flex;
+    align-items: center;
+  }
+  header .logo #menu {
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .searchbar {
+    display: flex;
+  }
+  header .searchbar form {
+    display: flex;
+    border: 1px solid #ddd;
+    height: 45px;
+    border-radius: 50px 50px;
+    margin-left: 2%;
+  }
+  header .searchbar form input {
+    width: 400px;
+    padding: 10px;
+    border: 0;
+    height: 100%;
+    border-radius: 50px 50px;
+  }
+  header .searchbar form input:focus {
+    outline: none;
+    border: 1px solid #ddd;
+  }
+  header .searchbar form button {
+    height: 100%;
+    width: 60px;
+    border: none;
+    border-radius: 0px 50px 50px 0px;
+  }
+  header .searchbar .mic {
+    margin-top: -5%;
+    border-radius: 50px;
+  }
+}
+@media (max-width: 956px) {
+  .content {
+    width: calc(100vw - 250px);
+  }
+  .content .chip-wrapper {
+    overflow-x: scroll;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    position: fixed;
+  }
+  .content .chip-wrapper .chip {
+    font-size: 14px;
+    margin: 12px 6px;
+    background-color: rgba(0, 0, 0, 0.0509803922);
+    padding: 6px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.0509803922);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: black;
+  }
+  .content .chip-wrapper .chip:hover {
+    background-color: rgba(0, 0, 0, 0.3019607843);
+  }
+  .videocontainer {
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-y: scroll;
+    margin-top: 8%;
+    margin-right: 3%;
+  }
+  .videocontainer .details {
+    display: flex;
+  }
+  .videocontainer .details .author img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+  .videocontainer .title {
+    display: flex;
+    flex-direction: column;
+  }
+  .videocontainer .title h3 {
+    color: rgb(0, 0, 0);
+    line-height: 18px;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .videocontainer .title span {
+    text-decoration: none;
+    color: rgb(96, 96, 96);
+    font-size: 14px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 15px;
+  }
+  header .material-symbols-outlined {
+    color: rgb(100, 100, 100);
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .logo {
+    display: flex;
+    align-items: center;
+  }
+  header .logo #menu {
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .searchbar {
+    display: flex;
+  }
+  header .searchbar form {
+    display: flex;
+    border: 1px solid #ddd;
+    height: 45px;
+    border-radius: 50px 50px;
+    margin-left: 2%;
+  }
+  header .searchbar form input {
+    width: 400px;
+    padding: 10px;
+    border: 0;
+    height: 100%;
+    border-radius: 50px 50px;
+  }
+  header .searchbar form input:focus {
+    outline: none;
+    border: 1px solid #ddd;
+  }
+  header .searchbar form button {
+    height: 100%;
+    width: 60px;
+    border: none;
+    border-radius: 0px 50px 50px 0px;
+  }
+  header .searchbar .mic {
+    margin-top: -5%;
+    border-radius: 50px;
+  }
+}
+@media (max-width: 950px) {
+  .content {
+    width: calc(100vw - 200px);
+  }
+  .content .chip-wrapper {
+    overflow-x: scroll;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    position: fixed;
+  }
+  .content .chip-wrapper .chip {
+    font-size: 14px;
+    margin: 12px 6px;
+    background-color: rgba(0, 0, 0, 0.0509803922);
+    padding: 6px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.0509803922);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: black;
+  }
+  .content .chip-wrapper .chip:hover {
+    background-color: rgba(0, 0, 0, 0.3019607843);
+  }
+  .videocontainer {
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+    overflow-y: scroll;
+    margin-top: 8%;
+    margin-right: 9%;
+  }
+  .videocontainer .details {
+    display: flex;
+  }
+  .videocontainer .details .author img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+  .videocontainer .title {
+    display: flex;
+    flex-direction: column;
+  }
+  .videocontainer .title h3 {
+    color: rgb(0, 0, 0);
+    line-height: 18px;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .videocontainer .title span {
+    text-decoration: none;
+    color: rgb(96, 96, 96);
+    font-size: 14px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 15px;
+  }
+  header .material-symbols-outlined {
+    color: rgb(100, 100, 100);
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .logo {
+    display: flex;
+    align-items: center;
+  }
+  header .logo #menu {
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .searchbar {
+    display: flex;
+  }
+  header .searchbar form {
+    display: flex;
+    border: 1px solid #ddd;
+    height: 45px;
+    border-radius: 50px 50px;
+    margin-left: 2%;
+  }
+  header .searchbar form input {
+    width: 400px;
+    padding: 10px;
+    border: 0;
+    height: 100%;
+    border-radius: 50px 50px;
+  }
+  header .searchbar form input:focus {
+    outline: none;
+    border: 1px solid #ddd;
+  }
+  header .searchbar form button {
+    height: 100%;
+    width: 60px;
+    border: none;
+    border-radius: 0px 50px 50px 0px;
+  }
+  header .searchbar .mic {
+    margin-top: -5%;
+    border-radius: 50px;
+  }
+}
+@media (max-width: 944px) {
+  .content {
+    width: calc(100vw - 320px);
+  }
+  .content .chip-wrapper {
+    overflow-x: scroll;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    position: fixed;
+  }
+  .content .chip-wrapper .chip {
+    font-size: 14px;
+    margin: 12px 6px;
+    background-color: rgba(0, 0, 0, 0.0509803922);
+    padding: 6px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.0509803922);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: black;
+  }
+  .content .chip-wrapper .chip:hover {
+    background-color: rgba(0, 0, 0, 0.3019607843);
+  }
+  .videocontainer {
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-y: scroll;
+    margin-top: 8%;
+    margin-right: 3%;
+  }
+  .videocontainer .details {
+    display: flex;
+  }
+  .videocontainer .details .author img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+  .videocontainer .title {
+    display: flex;
+    flex-direction: column;
+  }
+  .videocontainer .title h3 {
+    color: rgb(0, 0, 0);
+    line-height: 18px;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .videocontainer .title span {
+    text-decoration: none;
+    color: rgb(96, 96, 96);
+    font-size: 14px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 15px;
+  }
+  header .material-symbols-outlined {
+    color: rgb(100, 100, 100);
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .logo {
+    display: flex;
+    align-items: center;
+  }
+  header .logo #menu {
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .searchbar {
+    display: flex;
+  }
+  header .searchbar form {
+    display: flex;
+    border: 1px solid #ddd;
+    height: 45px;
+    border-radius: 50px 50px;
+    margin-left: 2%;
+  }
+  header .searchbar form input {
+    width: 400px;
+    padding: 10px;
+    border: 0;
+    height: 100%;
+    border-radius: 50px 50px;
+  }
+  header .searchbar form input:focus {
+    outline: none;
+    border: 1px solid #ddd;
+  }
+  header .searchbar form button {
+    height: 100%;
+    width: 60px;
+    border: none;
+    border-radius: 0px 50px 50px 0px;
+  }
+  header .searchbar .mic {
+    margin-top: -5%;
+    border-radius: 50px;
+  }
+  main {
+    height: calc(100vh - 80px);
+    width: calc(100vw - 200px);
+    display: flex;
+    background-color: #ffffff;
+    position: fixed;
+  }
+  main .sidebar {
+    display: none;
+  }
+  main .sidebar .material-symbols-outlined {
+    color: black;
+  }
+  main .sidebar .nav {
+    display: none;
+  }
+  main .sidebar .nav .navlink {
+    display: none;
+  }
+  main .sidebar .nav .navlink span {
+    margin-left: 15px;
+  }
+  main .sidebar .nav .navlink img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  main .sidebar .nav .navlink:hover {
+    background: #e5e5e5;
+    cursor: pointer;
+  }
+  main .sidebar .nav .active {
+    background: #e5e5e5;
+  }
+}
+@media (max-width: 944px) and (max-width: 768px) {
+  .content {
+    width: calc(100vw - 200px);
+  }
+  .content .chip-wrapper {
+    overflow-x: scroll;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    position: fixed;
+  }
+  .content .chip-wrapper .chip {
+    font-size: 14px;
+    margin: 12px 6px;
+    background-color: rgba(0, 0, 0, 0.0509803922);
+    padding: 6px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.0509803922);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: black;
+  }
+  .content .chip-wrapper .chip:hover {
+    background-color: rgba(0, 0, 0, 0.3019607843);
+  }
+  .videocontainer {
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-y: scroll;
+    margin-top: 8%;
+    margin-left: 20%;
+  }
+  .videocontainer .details {
+    display: flex;
+  }
+  .videocontainer .details .author img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+  .videocontainer .title {
+    display: flex;
+    flex-direction: column;
+  }
+  .videocontainer .title h3 {
+    color: rgb(0, 0, 0);
+    line-height: 18px;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .videocontainer .title span {
+    text-decoration: none;
+    color: rgb(96, 96, 96);
+    font-size: 14px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 15px;
+  }
+  header .material-symbols-outlined {
+    color: rgb(100, 100, 100);
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .logo {
+    display: flex;
+    align-items: center;
+  }
+  header .logo #menu {
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .searchbar {
+    display: flex;
+  }
+  header .searchbar form {
+    display: flex;
+    border: 1px solid #ddd;
+    height: 45px;
+    border-radius: 50px 50px;
+    margin-left: 2%;
+  }
+  header .searchbar form input {
+    width: 400px;
+    padding: 10px;
+    border: 0;
+    height: 100%;
+    border-radius: 50px 50px;
+  }
+  header .searchbar form input:focus {
+    outline: none;
+    border: 1px solid #ddd;
+  }
+  header .searchbar form button {
+    height: 100%;
+    width: 60px;
+    border: none;
+    border-radius: 0px 50px 50px 0px;
+  }
+  header .searchbar .mic {
+    margin-top: -5%;
+    border-radius: 50px;
   }
 }

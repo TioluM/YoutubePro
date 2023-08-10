@@ -1,0 +1,263 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 15px;
+}
+header .material-symbols-outlined {
+  color: rgb(100, 100, 100);
+  padding: 0 7px;
+  cursor: pointer;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+}
+header .logo #menu {
+  padding: 0 7px;
+  cursor: pointer;
+}
+header .searchbar {
+  display: flex;
+}
+header .searchbar form {
+  display: flex;
+  border: 1px solid #ddd;
+  height: 45px;
+  border-radius: 50px 50px;
+}
+header .searchbar form input {
+  width: 600px;
+  padding: 10px;
+  border: 0;
+  height: 100%;
+  border-radius: 50px 50px;
+}
+header .searchbar form input:focus {
+  outline: none;
+  border: 1px solid #ddd;
+}
+header .searchbar form button {
+  height: 100%;
+  width: 60px;
+  border: none;
+  border-radius: 0px 50px 50px 0px;
+}
+header .searchbar .mic {
+  margin-top: -5%;
+  border-radius: 50px;
+}
+
+main {
+  height: calc(100vh - 60px);
+  display: flex;
+  background-color: #ffffff;
+}
+main .sidebar {
+  color: black;
+  height: 100vh;
+  width: 250px;
+  background-color: rgb(255, 255, 255);
+  overflow-y: scroll;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+main .sidebar .material-symbols-outlined {
+  color: black;
+}
+main .sidebar .nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  display: block;
+}
+main .sidebar .nav .navlink {
+  display: flex;
+  align-items: center;
+  padding: 12px 25px;
+  color: black;
+}
+main .sidebar .nav .navlink span {
+  margin-left: 15px;
+}
+main .sidebar .nav .navlink img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+main .sidebar .nav .navlink:hover {
+  background: #e5e5e5;
+  cursor: pointer;
+}
+main .sidebar .nav .active {
+  background: #e5e5e5;
+}
+main .content {
+  margin: auto;
+}
+main .content i {
+  font-size: 15rem;
+  margin-left: 20%;
+  color: #b8b7b7;
+}
+main .content .text span {
+  font-size: 3rem;
+}
+main ::-webkit-scrollbar {
+  width: 8px;
+  background: none;
+}
+main ::-webkit-scrollbar-thumb {
+  display: block;
+}
+main ::-webkit-scrollbar-thumb:hover {
+  display: block;
+}
+main ::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+}
+main ::-webkit-scrollbar-thumb {
+  background: rgb(173, 173, 173);
+  border-radius: 5px;
+}
+
+.videocontainer iframe {
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 15px;
+  }
+  header .material-symbols-outlined {
+    color: rgb(100, 100, 100);
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .logo {
+    display: flex;
+    align-items: center;
+  }
+  header .logo #menu {
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .searchbar {
+    display: none;
+  }
+  header .searchbar form {
+    display: flex;
+    border: 1px solid #ddd;
+    height: 45px;
+    border-radius: 50px 50px;
+  }
+  header .searchbar form input {
+    width: 600px;
+    padding: 10px;
+    border: 0;
+    height: 100%;
+    border-radius: 50px 50px;
+  }
+  header .searchbar form input:focus {
+    outline: none;
+    border: 1px solid #ddd;
+  }
+  header .searchbar form button {
+    height: 100%;
+    width: 60px;
+    border: none;
+    border-radius: 0px 50px 50px 0px;
+  }
+  header .searchbar .mic {
+    margin-top: -5%;
+    border-radius: 50px;
+  }
+  .content {
+    margin: auto;
+  }
+  .content i {
+    font-size: 15rem;
+    margin-left: 20%;
+    color: #b8b7b7;
+  }
+  .content .text span {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 976px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 15px;
+  }
+  header .material-symbols-outlined {
+    color: rgb(100, 100, 100);
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .logo {
+    display: flex;
+    align-items: center;
+  }
+  header .logo #menu {
+    padding: 0 7px;
+    cursor: pointer;
+  }
+  header .searchbar {
+    display: flex;
+  }
+  header .searchbar form {
+    display: flex;
+    border: 1px solid #ddd;
+    height: 45px;
+    border-radius: 50px 50px;
+  }
+  header .searchbar form input {
+    width: 300px;
+    padding: 10px;
+    border: 0;
+    height: 100%;
+    border-radius: 50px 50px;
+  }
+  header .searchbar form input:focus {
+    outline: none;
+    border: 1px solid #ddd;
+  }
+  header .searchbar form button {
+    height: 100%;
+    width: 60px;
+    border: none;
+    border-radius: 0px 50px 50px 0px;
+  }
+  header .searchbar .mic {
+    margin-top: -5%;
+    border-radius: 50px;
+  }
+  .content {
+    margin: auto;
+  }
+  .content i {
+    font-size: 15rem;
+    margin-left: 20%;
+    color: #b8b7b7;
+  }
+  .content .text span {
+    font-size: 2rem;
+  }
+}

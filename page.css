@@ -1,0 +1,139 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 5px;
+}
+header .material-symbols-outlined {
+  color: rgb(100, 100, 100);
+  padding: 0 7px;
+  cursor: pointer;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+}
+header .logo #menu {
+  padding: 0 7px;
+  cursor: pointer;
+}
+header .searchbar {
+  display: flex;
+}
+header .searchbar form {
+  display: flex;
+  border: 1px solid #ddd;
+  height: 45px;
+  border-radius: 50px 50px;
+}
+header .searchbar form input {
+  width: 600px;
+  padding: 10px;
+  border: 0;
+  height: 100%;
+  border-radius: 50px 50px;
+}
+header .searchbar form input:focus {
+  outline: none;
+  border: 1px solid #ddd;
+}
+header .searchbar form button {
+  height: 100%;
+  width: 60px;
+  border: none;
+  border-radius: 0px 50px 50px 0px;
+}
+header .searchbar .mic {
+  margin-top: -5%;
+  border-radius: 50px;
+}
+
+.container-fluid {
+  padding: 25px;
+  overflow-y: scroll;
+}
+.container-fluid .videocontent h4 {
+  color: black;
+}
+.container-fluid .videocontent .bar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.container-fluid .videocontent .bar .text {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 170px;
+  margin-left: 5.5%;
+  margin-top: -4.5%;
+}
+.container-fluid .videocontent .bar .text h6 {
+  font-size: 12px;
+}
+.container-fluid .videocontent .bar a {
+  text-decoration: none;
+  display: flex;
+  margin-top: -4.5%;
+  margin-left: 20%;
+}
+.container-fluid .videocontent .bar a p {
+  border: 1px solid black;
+  width: 100px;
+  padding: 7px;
+  border-radius: 60px 60px;
+  color: white;
+  background-color: black;
+}
+.container-fluid .smallvids {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin-left: 73%;
+  margin-top: -45%;
+  width: 500PX;
+}
+.container-fluid .smallvids .vids .videos {
+  float: left;
+  margin-left: 2%;
+}
+.container-fluid .smallvids .vids .videos iframe {
+  border-radius: 10px;
+}
+.container-fluid .smallvids .details {
+  display: flex;
+  margin-top: 7%;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+}
+.container-fluid .smallvids .details .author img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+.container-fluid .smallvids .title {
+  display: flex;
+  flex-direction: column;
+}
+.container-fluid .smallvids .title h3 {
+  color: rgb(0, 0, 0);
+  line-height: 18px;
+  font-size: 20px;
+  margin-bottom: 6px;
+  display: flex;
+  flex-direction: row;
+}
+.container-fluid .smallvids .title a {
+  font-size: 15px;
+}
+.container-fluid .smallvids .title span {
+  text-decoration: none;
+  color: rgb(96, 96, 96);
+  font-size: 12px;
+}
